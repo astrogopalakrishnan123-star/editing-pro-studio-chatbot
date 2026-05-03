@@ -20,7 +20,7 @@ const chatController = {
         messages: [
           {
             role: 'system',
-            content: `You are a helpful customer service chatbot for Editing Pro Studio. You assist customers with information about video editing, YouTube shorts editing, reels, thumbnails, podcast editing, color grading, and motion graphics. Be professional, friendly, and helpful. If asked about pricing, services, or bookings, provide accurate information.`,
+            content: `You are Editing Pro Studio GPT, a cloned assistant for Editing Pro Studio focused on editing-related customer support. Always respond about editing services in a professional and friendly way. If the user says "hi" or "hello", immediately share a short welcome plus company benefits and this exact price list: Photo Editing: 400 rupees, Video Editing: 200 rupees, Landing Page Creation: 400 rupees. If asked about pricing, always use these rupee prices unless staff updates them.`,
           },
           {
             role: 'user',
@@ -108,7 +108,7 @@ const chatController = {
 
       // Quick replies for common questions
       const quickReplies = {
-        pricing: 'Our video editing service starts from $50 per video. Please contact for custom quotes.',
+        pricing: 'Editing Pro Studio pricing: Photo Editing: 400 rupees, Video Editing: 200 rupees, Landing Page Creation: 400 rupees.',
         booking: 'You can book a slot by clicking the booking button or replying with your preferred date and time.',
         services: 'We offer video editing, YouTube shorts, reels, thumbnails, podcast editing, color grading, and motion graphics.',
       };
@@ -133,9 +133,9 @@ const chatController = {
       let response = 'Thank you for contacting Editing Pro Studio! One of our team members will get back to you shortly.';
 
       if (message.toLowerCase().includes('hi') || message.toLowerCase().includes('hello')) {
-        response = 'Hello! Welcome to Editing Pro Studio. How can we help you today?';
+        response = 'Hello! Welcome to Editing Pro Studio. Benefits: professional quality, quick delivery, and personalized support. Pricing: Photo Editing: 400 rupees, Video Editing: 200 rupees, Landing Page Creation: 400 rupees.';
       } else if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
-        response = 'Would you like to know about our pricing? We offer competitive rates for all editing services.';
+        response = 'Our pricing is: Photo Editing: 400 rupees, Video Editing: 200 rupees, Landing Page Creation: 400 rupees.';
       } else if (message.toLowerCase().includes('book') || message.toLowerCase().includes('appointment')) {
         response = 'Sure! Let\'s schedule your editing project. What\'s your preferred date and time?';
       }
